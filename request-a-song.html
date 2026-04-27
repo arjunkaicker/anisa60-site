@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Song · Studio 60</title>
+  <link rel="icon" type="image/png" href="assets/studio60-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <main>
+    <!-- PAGE BANNER -->
+    <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1616714109948-c74fe5029a4d?auto=format&fit=crop&w=2000&q=70');">
+      <div class="page-banner-inner">
+        <span class="page-banner-kicker">Build the playlist</span>
+        <h1 class="page-banner-title">Request a <span class="gold-text">Song</span></h1>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <p class="prose prose-center" style="margin-bottom: 40px;">
+          Help shape the soundtrack for the night. From throwbacks to floor-fillers — drop your picks below.
+        </p>
+
+        <div id="song-success" class="form-success">
+          <h3>Got it — added to the queue.</h3>
+          <p>Want to send another? Just submit again.</p>
+        </div>
+
+        <form class="form-card" data-form data-success="song-success" novalidate>
+          <div class="form-row">
+            <label for="song-name">Song title</label>
+            <input id="song-name" type="text" name="song" placeholder="e.g., September" required />
+          </div>
+
+          <div class="form-row">
+            <label for="song-artist">Artist</label>
+            <input id="song-artist" type="text" name="artist" placeholder="e.g., Earth, Wind &amp; Fire" required />
+          </div>
+
+          <div class="form-row">
+            <label for="song-from">Your name (optional)</label>
+            <input id="song-from" type="text" name="from" placeholder="So Anisa knows who to thank" />
+          </div>
+
+          <div class="form-row">
+            <label for="song-message">Note for Anisa (optional)</label>
+            <textarea id="song-message" name="message" placeholder="A memory, a dedication, or just why this song"></textarea>
+          </div>
+
+          <div class="center" style="margin-top: 28px;">
+            <button class="btn btn-large" type="submit">Submit Request</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/partials.js"></script>
+  <script src="assets/script.js"></script>
+</body>
+</html>

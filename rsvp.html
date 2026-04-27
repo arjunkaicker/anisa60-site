@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSVP · Studio 60 — Anisa's 60th</title>
+  <link rel="icon" type="image/png" href="assets/studio60-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <main>
+    <!-- PAGE BANNER -->
+    <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=70');">
+      <div class="page-banner-inner">
+        <span class="page-banner-kicker">Your seat at the table</span>
+        <h1 class="page-banner-title">RSVP</h1>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <p class="prose prose-center" style="margin-bottom: 40px;">
+          Kindly reply by <strong style="color: var(--gold-light);">June 15, 2026</strong>. We can't wait to celebrate with you.
+        </p>
+
+        <div id="rsvp-success" class="form-success">
+          <h3>Thank you — you're on the list.</h3>
+          <p>A confirmation will follow by email. See you July 24th.</p>
+        </div>
+
+        <form class="form-card" data-form data-success="rsvp-success" novalidate>
+          <div class="form-row">
+            <label for="rsvp-name">Full name</label>
+            <input id="rsvp-name" type="text" name="name" placeholder="Your name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="rsvp-email">Email</label>
+            <input id="rsvp-email" type="email" name="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-row">
+            <label>Will you be there?</label>
+            <div class="radio-group">
+              <div class="radio-pill">
+                <input id="rsvp-yes" type="radio" name="attending" value="yes" checked />
+                <label for="rsvp-yes">Joyfully accepts</label>
+              </div>
+              <div class="radio-pill">
+                <input id="rsvp-no" type="radio" name="attending" value="no" />
+                <label for="rsvp-no">Regretfully declines</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="rsvp-guests">Number of guests (including you)</label>
+            <select id="rsvp-guests" name="guests">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="rsvp-dietary">Dietary preferences or allergies</label>
+            <input id="rsvp-dietary" type="text" name="dietary" placeholder="e.g., vegetarian, gluten-free, nut allergy" />
+          </div>
+
+          <div class="form-row">
+            <label for="rsvp-note">A note for Anisa (optional)</label>
+            <textarea id="rsvp-note" name="note" placeholder="Anything you'd like to share"></textarea>
+          </div>
+
+          <div class="center" style="margin-top: 32px;">
+            <button class="btn btn-large" type="submit">Send RSVP</button>
+          </div>
+          <div class="center" style="margin-top: 16px;">
+            <span class="help" style="color: var(--text-mute); font-size: 0.85rem;">
+              Need to update your reply? Email <a class="inline" href="mailto:rsvp@anisa60.com">rsvp@anisa60.com</a>.
+            </span>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/partials.js"></script>
+  <script src="assets/script.js"></script>
+</body>
+</html>

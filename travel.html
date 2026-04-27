@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel · Studio 60</title>
+  <link rel="icon" type="image/png" href="assets/studio60-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <main>
+    <!-- PAGE BANNER -->
+    <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1641308188128-aa523e869cd3?auto=format&fit=crop&w=2000&q=70');">
+      <div class="page-banner-inner">
+        <span class="page-banner-kicker">Coming to Atlanta</span>
+        <h1 class="page-banner-title">Getting <span class="gold-text">Here</span></h1>
+      </div>
+    </section>
+
+    <!-- JUMP-TO NAV -->
+    <nav class="jump-nav" aria-label="Jump to section">
+      <span class="jump-nav-label">Jump to:</span>
+      <a href="#flights">Flights</a>
+      <a href="#hotel">Hotel</a>
+      <a href="#getting-around">Getting Around</a>
+    </nav>
+
+    <section class="section section-tight">
+      <div class="container">
+        <p class="prose prose-center" style="margin-bottom: 32px;">
+          Flight in, settle into our partner hotel, and we'll see you on the dance floor.
+        </p>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="section-divider"><span class="divider-mark-wrap"><span class="divider-mark">· 60 ·</span></span></div>
+
+    <!-- FLIGHTS + HOTEL CARDS -->
+    <section class="section section-tight" id="flights">
+      <div class="container">
+        <div class="photo-grid photo-grid-2">
+          <div class="photo-card">
+            <div class="photo-card-imgwrap">
+              <img class="photo-card-img" src="https://images.unsplash.com/photo-1548678977-d0f19d86f0bf?auto=format&fit=crop&w=1400&q=70" alt="Plane window over city" loading="lazy" />
+            </div>
+            <div class="photo-card-panel is-detail">
+              <span class="photo-card-eyebrow">Flights</span>
+              <h3 class="photo-card-title">Hartsfield-Jackson ATL</h3>
+              <p class="photo-card-desc">The world's busiest airport — direct flights from nearly everywhere. Plan to land by Friday afternoon to settle in before doors open at 7:00 PM.</p>
+              <ul class="dash-list">
+                <li>6000 N Terminal Pkwy, Suite 4000, Atlanta, GA 30320</li>
+                <li>14 miles from the venue (~25 min by car)</li>
+              </ul>
+              <p style="margin-top: 18px;">
+                <a class="inline" href="https://www.google.com/maps/dir/Hartsfield-Jackson+Atlanta+International+Airport/Westside+Arts+Center+760+10th+Street+NW+Atlanta+GA" target="_blank" rel="noopener">View directions</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="photo-card" id="hotel">
+            <div class="photo-card-imgwrap">
+              <img class="photo-card-img" src="https://images.unsplash.com/photo-1672055290450-0fbc026c5b21?auto=format&fit=crop&w=1400&q=70" alt="Hotel exterior at night" loading="lazy" />
+            </div>
+            <div class="photo-card-panel is-detail">
+              <span class="photo-card-eyebrow">Hotel</span>
+              <h3 class="photo-card-title">Hyatt Centric Buckhead</h3>
+              <p class="photo-card-desc">We've partnered with Hyatt Centric Buckhead for your stay. Enjoy a discounted rate for our guests when you book by July 1, 2026.</p>
+              <ul class="dash-list">
+                <li>3301 Lenox Pkwy, Atlanta, GA 30326</li>
+                <li>Booking code: <strong>88714</strong></li>
+                <li>Book by July 1, 2026 to lock in the rate</li>
+              </ul>
+              <p style="margin-top: 18px;">
+                <a class="inline" href="https://www.hyatt.com/" target="_blank" rel="noopener">Book your stay</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="section-divider"><span class="divider-mark-wrap"><span class="divider-mark">· 60 ·</span></span></div>
+
+    <!-- GETTING AROUND -->
+    <section class="section section-tight" id="getting-around">
+      <div class="container">
+        <h2 class="anchor-heading">Getting Around</h2>
+        <p class="prose prose-center">
+          Uber and Lyft are widely available throughout Atlanta. The drive from Hyatt Centric Buckhead to the Westside Arts Center is roughly 15 minutes, depending on traffic — we recommend rideshare for an easy door-to-door arrival.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/partials.js"></script>
+  <script src="assets/script.js"></script>
+</body>
+</html>

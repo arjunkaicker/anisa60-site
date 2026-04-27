@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venue · Studio 60</title>
+  <link rel="icon" type="image/png" href="assets/studio60-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <main>
+    <!-- PAGE BANNER -->
+    <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1575917649705-5b59aaa12e6b?auto=format&fit=crop&w=2000&q=70');">
+      <div class="page-banner-inner">
+        <span class="page-banner-kicker">Where it all happens</span>
+        <h1 class="page-banner-title">The <span class="gold-text">Venue</span></h1>
+      </div>
+    </section>
+
+    <!-- JUMP-TO NAV -->
+    <nav class="jump-nav" aria-label="Jump to section">
+      <span class="jump-nav-label">Jump to:</span>
+      <a href="#address">Westside Arts Center</a>
+      <a href="#parking">Parking &amp; Drop-Off</a>
+      <a href="#access">Accessibility</a>
+    </nav>
+
+    <section class="section section-tight">
+      <div class="container">
+        <p class="prose prose-center" style="margin-bottom: 32px;">
+          An industrial-chic gallery in the heart of Atlanta's Westside Arts District.
+        </p>
+      </div>
+    </section>
+
+    <!-- ADDRESS + MAP -->
+    <section class="section section-tight" id="address">
+      <div class="container">
+        <div class="venue-grid">
+          <div class="card venue-info-card">
+            <span class="card-icon">Address</span>
+            <h3>Westside Arts Center</h3>
+            <p class="address-line">760 10th Street NW<br />Atlanta, GA 30318</p>
+
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Westside+Arts+Center+760+10th+Street+NW+Atlanta+GA+30318" target="_blank" rel="noopener">Open in Google Maps</a>
+
+            <span class="meta-label" id="parking">Parking</span>
+            <p class="meta-line">Complimentary on-site parking — details to follow.</p>
+
+            <span class="meta-label">Drop-Off</span>
+            <p class="meta-line">Rideshare and valet drop-off at the main entrance on 10th Street NW.</p>
+
+            <span class="meta-label" id="access">Accessibility</span>
+            <p class="meta-line">Step-free entry. Reserved seating available — note any needs in your RSVP.</p>
+          </div>
+
+          <div class="venue-map">
+            <iframe
+              title="Westside Arts Center map"
+              src="https://www.google.com/maps?q=760+10th+Street+NW+Atlanta+GA+30318&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/partials.js"></script>
+  <script src="assets/script.js"></script>
+</body>
+</html>
