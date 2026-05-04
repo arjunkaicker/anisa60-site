@@ -85,7 +85,17 @@ function initForms() {
   document.querySelectorAll('[data-form]').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const successId = form.dataset.success;
+
+      // Pick the right success block — decline path overrides the default if present
+      let successId = form.dataset.success;
+      const attending = form.querySelector('input[name="attending"]:checked');
+      if (attending && attending.value === 'no' && form.dataset.successDecline) {
+        successId = form.dataset.successDecline;
+      }
+
+      // Hide any previously shown success siblings of either form
+      document.querySelectorAll('.form-success.is-visible').forEach(el => el.classList.remove('is-visible'));
+
       const success = successId ? document.getElementById(successId) : null;
       if (success) {
         success.classList.add('is-visible');

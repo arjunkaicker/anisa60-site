@@ -31,10 +31,15 @@
 
         <div id="rsvp-success" class="form-success">
           <h3>Thank you — you're on the list.</h3>
-          <p>A confirmation will follow by email. See you July 24th.</p>
+          <p>We'll be in touch closer to the date with any final details. See you July 24th.</p>
         </div>
 
-        <form class="form-card" data-form data-success="rsvp-success" novalidate>
+        <div id="rsvp-success-decline" class="form-success">
+          <h3>Thank you for letting us know.</h3>
+          <p>You'll be missed — but we appreciate you sending word. Anisa will get any note you left above.</p>
+        </div>
+
+        <form class="form-card" data-form data-success="rsvp-success" data-success-decline="rsvp-success-decline" novalidate>
           <div class="form-row">
             <label for="rsvp-name">Full name</label>
             <input id="rsvp-name" type="text" name="name" placeholder="Your name" required />
