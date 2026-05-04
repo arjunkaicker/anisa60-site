@@ -80,20 +80,40 @@ function initTimelineTabs() {
   });
 }
 
-// Form submission feedback (RSVP / Song request) — front-end only stub
+// Form submission — POSTs to data-endpoint if set, otherwise just shows success UI
 function initForms() {
   document.querySelectorAll('[data-form]').forEach(form => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Pick the right success block — decline path overrides the default if present
       let successId = form.dataset.success;
       const attending = form.querySelector('input[name="attending"]:checked');
       if (attending && attending.value === 'no' && form.dataset.successDecline) {
         successId = form.dataset.successDecline;
       }
 
-      // Hide any previously shown success siblings of either form
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalLabel = submitBtn ? submitBtn.textContent : null;
+
+      const endpoint = form.dataset.endpoint;
+      if (endpoint) {
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending…';
+        }
+        try {
+          const body = new URLSearchParams(new FormData(form));
+          await fetch(endpoint, { method: 'POST', mode: 'no-cors', body });
+        } catch (err) {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalLabel;
+          }
+          alert("Sorry — couldn't send your RSVP. Check your connection and try again, or email rsvp@anisa60.com.");
+          return;
+        }
+      }
+
       document.querySelectorAll('.form-success.is-visible').forEach(el => el.classList.remove('is-visible'));
 
       const success = successId ? document.getElementById(successId) : null;
@@ -102,6 +122,10 @@ function initForms() {
         success.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
       form.reset();
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
     });
   });
 }
