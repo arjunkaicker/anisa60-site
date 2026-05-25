@@ -440,6 +440,28 @@ main { position: relative; z-index: 1; }
   letter-spacing: 0.16em;
 }
 
+/* Mobile-only hero tweaks
+   - Tighten the gap above the Studio 60 logo
+   - Hide diamond separators and the middle-dot in the venue line
+   - Let the venue's "Atlanta" wrap to its own line cleanly */
+@media (max-width: 700px) {
+  .hero {
+    justify-content: flex-start;
+    padding-top: 24px;
+  }
+  .hero-logo {
+    margin-bottom: 24px;
+  }
+  .hero-meta .dot { display: none; }
+  .venue-meta .venue-sep { display: none; }
+  .venue-meta {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
