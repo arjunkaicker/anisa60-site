@@ -540,6 +540,9 @@ main { position: relative; z-index: 1; }
   border-bottom: 1px solid var(--line);
 }
 
+/* Taller variant to mirror the RSVP hero feel on hero-style pages */
+.page-banner--tall { height: clamp(420px, 60vw, 640px); }
+
 .page-banner::before {
   content: "";
   position: absolute;
