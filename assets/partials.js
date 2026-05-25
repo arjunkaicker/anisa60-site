@@ -27,7 +27,6 @@ const FOOTER_HTML = `
 <footer class="footer">
   <img class="footer-logo" src="assets/studio60-logo.png" alt="Studio 60" />
   <div class="footer-tag">Create · Connect · Celebrate</div>
-  <p style="margin-top: 16px;">Anisa's 60th · July 24, 2026 · Atlanta, GA</p>
 </footer>
 `;
 

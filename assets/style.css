@@ -640,6 +640,20 @@ main { position: relative; z-index: 1; }
   font-size: 1rem;
 }
 
+/* Tighter symmetric gap around the diamond on Anisa's note section */
+.section-anisa-note { padding-top: 28px; padding-bottom: 28px; }
+.message-block--note { padding-top: 28px; padding-bottom: 28px; }
+
+/* Anisa signature — image rendered as gold via mask */
+.signature {
+  width: clamp(200px, 32vw, 260px);
+  height: clamp(160px, 26vw, 210px);
+  margin: 18px auto 0;
+  background: var(--gold-gradient);
+  -webkit-mask: url('../images/anisa-signature.png') no-repeat center / contain;
+  mask: url('../images/anisa-signature.png') no-repeat center / contain;
+}
+
 /* ============================================
    Photo + White Panel Cards (EDC editorial style)
    ============================================ */
