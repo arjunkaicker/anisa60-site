@@ -1,14 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Party">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Party">
   <defs>
-    <radialGradient id="haloOuter" cx="50%" cy="50%" r="50%">
+    <!-- Warm radial halos behind the glitter -->
+    <radialGradient id="haloOuter" cx="50%" cy="50%" r="55%">
       <stop offset="0%" stop-color="#c9a961" stop-opacity="0.35"/>
       <stop offset="55%" stop-color="#8c6f24" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
 
-    <radialGradient id="haloInner" cx="50%" cy="50%" r="40%">
-      <stop offset="0%" stop-color="#f3dc94" stop-opacity="0.45"/>
-      <stop offset="60%" stop-color="#c9a961" stop-opacity="0.18"/>
+    <radialGradient id="haloInner" cx="50%" cy="50%" r="32%">
+      <stop offset="0%" stop-color="#f3dc94" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#c9a961" stop-opacity="0.2"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
 
@@ -18,114 +19,82 @@
       <stop offset="100%" stop-color="#8c6f24"/>
     </linearGradient>
 
-    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="3"/>
+    <!-- Procedural fine-grain glitter field via fractal noise + alpha threshold -->
+    <filter id="fineGlitter" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="11" stitchTiles="stitch"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1"/>
+      </feComponentTransfer>
+      <feColorMatrix values="0 0 0 0 0.95
+                             0 0 0 0 0.78
+                             0 0 0 0 0.40
+                             0 0 0 1 0"/>
     </filter>
+
+    <filter id="midGlitter" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.32" numOctaves="2" seed="23" stitchTiles="stitch"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 1"/>
+      </feComponentTransfer>
+      <feColorMatrix values="0 0 0 0 1
+                             0 0 0 0 0.85
+                             0 0 0 0 0.5
+                             0 0 0 1 0"/>
+    </filter>
+
+    <!-- Center-weighted mask so the field is densest around the PARTY mark -->
+    <radialGradient id="falloffGrad" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="white" stop-opacity="1"/>
+      <stop offset="55%" stop-color="white" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0.25"/>
+    </radialGradient>
+
+    <mask id="centerFalloff">
+      <rect width="1600" height="900" fill="url(#falloffGrad)"/>
+    </mask>
 
     <radialGradient id="sparkleGrad" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#fff8e0" stop-opacity="1"/>
       <stop offset="100%" stop-color="#f3dc94" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Reusable larger sparkle -->
+    <!-- Cross-style sparkle for highlights -->
     <g id="sparkle">
-      <circle r="6" fill="url(#sparkleGrad)"/>
-      <path d="M 0 -14 L 1.2 -2 L 14 0 L 1.2 2 L 0 14 L -1.2 2 L -14 0 L -1.2 -2 Z" fill="#fff8e0" opacity="0.9"/>
+      <circle r="8" fill="url(#sparkleGrad)"/>
+      <path d="M 0 -18 L 1.4 -2.4 L 18 0 L 1.4 2.4 L 0 18 L -1.4 2.4 L -18 0 L -1.4 -2.4 Z" fill="#fff8e0" opacity="0.95"/>
     </g>
   </defs>
 
   <!-- Black backdrop -->
-  <rect width="600" height="500" fill="#000000"/>
+  <rect width="1600" height="900" fill="#000000"/>
 
-  <!-- Soft halo glow behind glitter -->
-  <ellipse cx="300" cy="250" rx="290" ry="220" fill="url(#haloOuter)"/>
-  <ellipse cx="300" cy="250" rx="220" ry="170" fill="url(#haloInner)"/>
+  <!-- Warm halos -->
+  <ellipse cx="800" cy="450" rx="780" ry="500" fill="url(#haloOuter)"/>
+  <ellipse cx="800" cy="450" rx="420" ry="280" fill="url(#haloInner)"/>
 
-  <!-- Dense glitter dots clustered around centre, with falloff -->
-  <g fill="#f3dc94" filter="url(#glow)">
-    <!-- inner-dense ring -->
-    <circle cx="252" cy="178" r="3" opacity="0.95"/>
-    <circle cx="280" cy="155" r="2.2" opacity="0.85"/>
-    <circle cx="320" cy="172" r="2.6" opacity="0.9"/>
-    <circle cx="358" cy="192" r="2" opacity="0.75"/>
-    <circle cx="232" cy="206" r="2.4" opacity="0.85"/>
-    <circle cx="378" cy="222" r="3.1" opacity="0.92"/>
-    <circle cx="208" cy="240" r="2.6" opacity="0.8"/>
-    <circle cx="392" cy="260" r="2" opacity="0.85"/>
-    <circle cx="195" cy="280" r="2.2" opacity="0.85"/>
-    <circle cx="402" cy="298" r="2.8" opacity="0.88"/>
-    <circle cx="222" cy="320" r="2.6" opacity="0.85"/>
-    <circle cx="372" cy="328" r="2.4" opacity="0.85"/>
-    <circle cx="252" cy="340" r="2" opacity="0.85"/>
-    <circle cx="346" cy="345" r="3.2" opacity="0.95"/>
-    <circle cx="294" cy="346" r="2.6" opacity="0.85"/>
-
-    <!-- mid scatter -->
-    <circle cx="172" cy="160" r="1.8" opacity="0.75"/>
-    <circle cx="412" cy="150" r="2.4" opacity="0.85"/>
-    <circle cx="156" cy="220" r="2.2" opacity="0.75"/>
-    <circle cx="438" cy="218" r="2" opacity="0.7"/>
-    <circle cx="142" cy="280" r="2.4" opacity="0.75"/>
-    <circle cx="452" cy="280" r="2.2" opacity="0.8"/>
-    <circle cx="162" cy="340" r="2.6" opacity="0.8"/>
-    <circle cx="438" cy="345" r="2.2" opacity="0.75"/>
-    <circle cx="208" cy="380" r="2" opacity="0.75"/>
-    <circle cx="394" cy="382" r="2.8" opacity="0.85"/>
-    <circle cx="262" cy="395" r="1.8" opacity="0.65"/>
-    <circle cx="336" cy="398" r="2.4" opacity="0.78"/>
-    <circle cx="248" cy="130" r="2.2" opacity="0.78"/>
-    <circle cx="352" cy="125" r="2" opacity="0.78"/>
-    <circle cx="300" cy="118" r="2.6" opacity="0.85"/>
-
-    <!-- outer faint scatter -->
-    <circle cx="98" cy="180" r="1.6" opacity="0.55"/>
-    <circle cx="118" cy="260" r="1.4" opacity="0.5"/>
-    <circle cx="100" cy="320" r="1.8" opacity="0.6"/>
-    <circle cx="490" cy="180" r="1.6" opacity="0.55"/>
-    <circle cx="498" cy="260" r="1.4" opacity="0.5"/>
-    <circle cx="488" cy="330" r="1.8" opacity="0.6"/>
-    <circle cx="180" cy="100" r="1.2" opacity="0.5"/>
-    <circle cx="220" cy="86" r="1.6" opacity="0.55"/>
-    <circle cx="280" cy="78" r="1.4" opacity="0.5"/>
-    <circle cx="340" cy="82" r="1.8" opacity="0.6"/>
-    <circle cx="396" cy="92" r="1.4" opacity="0.5"/>
-    <circle cx="420" cy="108" r="1.2" opacity="0.45"/>
-    <circle cx="180" cy="408" r="1.4" opacity="0.5"/>
-    <circle cx="220" cy="420" r="1.8" opacity="0.6"/>
-    <circle cx="282" cy="430" r="1.6" opacity="0.55"/>
-    <circle cx="340" cy="425" r="1.4" opacity="0.5"/>
-    <circle cx="396" cy="412" r="1.8" opacity="0.6"/>
-    <circle cx="430" cy="395" r="1.4" opacity="0.5"/>
-
-    <!-- micro sparkles inside the cluster -->
-    <circle cx="240" cy="240" r="1" opacity="0.7"/>
-    <circle cx="266" cy="265" r="1.2" opacity="0.75"/>
-    <circle cx="288" cy="225" r="0.9" opacity="0.65"/>
-    <circle cx="312" cy="248" r="1.1" opacity="0.7"/>
-    <circle cx="334" cy="218" r="1" opacity="0.7"/>
-    <circle cx="350" cy="270" r="1.3" opacity="0.75"/>
-    <circle cx="376" cy="248" r="0.9" opacity="0.65"/>
-    <circle cx="226" cy="298" r="1.2" opacity="0.7"/>
-    <circle cx="264" cy="318" r="1" opacity="0.7"/>
-    <circle cx="320" cy="318" r="1.4" opacity="0.8"/>
-    <circle cx="364" cy="298" r="1.1" opacity="0.7"/>
-    <circle cx="278" cy="200" r="1" opacity="0.7"/>
-    <circle cx="316" cy="200" r="1.2" opacity="0.75"/>
-    <circle cx="358" cy="170" r="0.9" opacity="0.65"/>
+  <!-- Dense procedural glitter field, mask-faded toward edges -->
+  <g mask="url(#centerFalloff)">
+    <rect width="1600" height="900" filter="url(#fineGlitter)"/>
+    <rect width="1600" height="900" filter="url(#midGlitter)" opacity="0.85"/>
   </g>
 
-  <!-- A few cross-style sparkles for highlights -->
-  <use href="#sparkle" transform="translate(190 200) scale(0.85)"/>
-  <use href="#sparkle" transform="translate(410 195) scale(0.75)"/>
-  <use href="#sparkle" transform="translate(220 350) scale(0.7)"/>
-  <use href="#sparkle" transform="translate(395 345) scale(0.85)"/>
-  <use href="#sparkle" transform="translate(305 110) scale(0.6)"/>
+  <!-- Larger cross sparkles for visual highlights -->
+  <use href="#sparkle" transform="translate(380 220) scale(1.1)"/>
+  <use href="#sparkle" transform="translate(1240 200) scale(1)"/>
+  <use href="#sparkle" transform="translate(310 700) scale(0.95)"/>
+  <use href="#sparkle" transform="translate(1290 690) scale(1.15)"/>
+  <use href="#sparkle" transform="translate(540 140) scale(0.7)"/>
+  <use href="#sparkle" transform="translate(1080 140) scale(0.8)"/>
+  <use href="#sparkle" transform="translate(560 770) scale(0.7)"/>
+  <use href="#sparkle" transform="translate(1080 780) scale(0.8)"/>
+  <use href="#sparkle" transform="translate(180 460) scale(0.7)"/>
+  <use href="#sparkle" transform="translate(1420 460) scale(0.75)"/>
 
   <!-- PARTY text -->
-  <text x="300" y="285" text-anchor="middle"
+  <text x="800" y="525" text-anchor="middle"
         font-family="'Bebas Neue', 'Oswald', 'Impact', sans-serif"
-        font-size="130" font-weight="400"
+        font-size="260" font-weight="400"
         fill="url(#goldText)"
-        letter-spacing="6"
+        letter-spacing="14"
         style="paint-order: stroke fill;">PARTY</text>
 </svg>

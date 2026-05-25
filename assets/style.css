@@ -564,15 +564,20 @@ main { position: relative; z-index: 1; }
 
 /* Run of Show — "The Evening Unfolds" hero + narrative copy */
 .ros-banner {
-  background: var(--black);
+  background-color: var(--black);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.ros-graphic {
-  display: block;
-  width: clamp(220px, 30vw, 320px);
-  height: auto;
-  margin: 0 auto 28px;
-  filter: drop-shadow(0 6px 26px rgba(201, 169, 97, 0.35));
+.ros-heading {
+  text-align: center;
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--white);
+  margin-bottom: 32px;
 }
 
 .ros-narrative {
