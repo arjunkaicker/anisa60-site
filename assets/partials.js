@@ -11,13 +11,13 @@ const NAV_HTML = `
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
     <ul class="nav-links">
-      <li><a class="nav-link" href="rsvp.html">RSVP</a></li>
-      <li><a class="nav-link" href="run-of-show.html">Run of Show</a></li>
-      <li><a class="nav-link" href="venue.html">Venue</a></li>
-      <li><a class="nav-link" href="attire.html">Attire</a></li>
+      <li><a class="nav-link" href="rsvp.html">Invitation</a></li>
+      <li><a class="nav-link" href="run-of-show.html">Party</a></li>
+      <li><a class="nav-link" href="venue.html">Setting</a></li>
+      <li><a class="nav-link" href="attire.html">Style</a></li>
       <li><a class="nav-link" href="request-a-song.html">Soundtrack</a></li>
       <li><a class="nav-link" href="travel.html">Travel</a></li>
-      <li><a class="nav-link" href="advocacy.html">Advocacy</a></li>
+      <li><a class="nav-link" href="advocacy.html">Giving Back</a></li>
     </ul>
   </div>
 </nav>
