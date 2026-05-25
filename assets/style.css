@@ -377,6 +377,13 @@ main { position: relative; z-index: 1; }
 
 .hero-title .gold-text { display: inline-block; }
 
+.hero-title-tail {
+  display: inline-block;
+  font-size: 0.55em;
+  letter-spacing: 0.06em;
+  margin-top: 0.15em;
+}
+
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
