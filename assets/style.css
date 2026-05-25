@@ -831,6 +831,19 @@ main { position: relative; z-index: 1; }
   color: var(--gold-light);
 }
 
+/* Plain stacked list — same metrics as dash-list but no marker */
+.clean-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.clean-list li {
+  padding: 6px 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
 .dash-list {
   list-style: none;
   margin-top: 10px;
