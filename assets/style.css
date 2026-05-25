@@ -1383,16 +1383,17 @@ main { position: relative; z-index: 1; }
 [id]:not(body) { scroll-margin-top: 92px; }
 
 /* ============================================
-   RSVP Hero — bokeh image as a vertical column on
-   the left, intro + form stacked on the right
-   (Desktop). On mobile, the intro overlays the image
-   and the form sits below.
+   RSVP Hero — single-column layout on every size.
+   Top: image banner with intro text overlaid in the
+   black centre, gold glitter rising at the bottom.
+   Below: the form. Bokeh balls are intentionally
+   cropped out by the image positioning.
    ============================================ */
 .rsvp-hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(220px, 28%) 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(560px, auto) auto;
   align-items: stretch;
   background: var(--black);
   border-bottom: 1px solid var(--line);
@@ -1400,28 +1401,35 @@ main { position: relative; z-index: 1; }
 
 .rsvp-hero-image {
   grid-column: 1;
-  grid-row: 1 / span 2;
-  background-image: url('../images/bokeh-gold.jpg');
-  background-size: cover;
-  background-position: left center;
-  background-repeat: no-repeat;
-  border-right: 1px solid var(--line);
+  grid-row: 1;
+  /* Desktop: zoom into the right-bottom of the source so the
+     bokeh balls (top-left of original) stay out of frame and
+     only the glitter spread is visible. */
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.25) 100%), url('../images/bokeh-gold.jpg');
+  background-size: cover, 220% auto;
+  background-position: center, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  border-bottom: 1px solid var(--line);
 }
 
 .rsvp-hero-intro {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
-  padding: 72px 56px 16px;
+  z-index: 2;
+  align-self: center;
+  padding: 56px 40px;
   text-align: center;
   color: var(--text);
 }
 
 .rsvp-hero-form {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 2;
-  padding: 16px 56px 72px;
+  padding: 56px 40px 80px;
   text-align: center;
 }
+
+.rsvp-hero-form .form-card { max-width: 640px; margin: 0 auto; }
 
 .rsvp-hero-kicker {
   display: block;
@@ -1483,43 +1491,25 @@ main { position: relative; z-index: 1; }
   letter-spacing: 0.16em;
 }
 
-/* Breathing room before the form-card within the hero form column */
 .rsvp-hero-form .form-success,
-.rsvp-hero-form .form-card { margin-top: 32px; }
+.rsvp-hero-form .form-card { margin-top: 24px; }
 
-/* Mobile — image becomes a tall banner with intro overlaid in the
-   black space; the form then sits below in its own block. */
+/* Mobile — use the same crop the user liked: cover + centred, which
+   on a narrow viewport keeps only the centre of the image visible
+   (mostly black with the glitter rising at the bottom). */
 @media (max-width: 800px) {
   .rsvp-hero {
-    grid-template-columns: 1fr;
     grid-template-rows: minmax(460px, auto) auto;
   }
 
-  /* Image now spans the top row only; intro overlays it */
   .rsvp-hero-image {
-    grid-column: 1;
-    grid-row: 1;
     background-image: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.75) 100%), url('../images/bokeh-gold.jpg');
     background-size: cover, cover;
     background-position: center, center;
-    background-repeat: no-repeat, no-repeat;
-    border-right: none;
-    border-bottom: 1px solid var(--line);
   }
 
-  .rsvp-hero-intro {
-    grid-column: 1;
-    grid-row: 1;
-    z-index: 2;
-    align-self: center;
-    padding: 32px 24px;
-  }
-
-  .rsvp-hero-form {
-    grid-column: 1;
-    grid-row: 2;
-    padding: 36px 20px 56px;
-  }
+  .rsvp-hero-intro { padding: 32px 24px; }
+  .rsvp-hero-form { padding: 36px 20px 56px; }
 
   /* Tidy the meta line on small screens */
   .rsvp-hero-meta .dot { display: none; }
