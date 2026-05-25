@@ -389,6 +389,7 @@ main { position: relative; z-index: 1; }
   font-size: clamp(1rem, 1.4vw, 1.15rem);
   line-height: 1.65;
   text-align: center;
+  text-wrap: balance;
   animation: fadeUp 1s 0.35s ease both;
 }
 
