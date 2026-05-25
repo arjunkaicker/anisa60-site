@@ -543,6 +543,10 @@ main { position: relative; z-index: 1; }
 /* Taller variant to mirror the RSVP hero feel on hero-style pages */
 .page-banner--tall { height: clamp(420px, 60vw, 640px); }
 
+/* Generic line-balance utility — prevents orphan words on short
+   paragraphs by distributing line breaks evenly */
+.balance { text-wrap: balance; }
+
 /* Prose modifier — balance line breaks so short paragraphs don't
    leave a single orphan word on the last line */
 .prose-balance p { text-wrap: balance; }
