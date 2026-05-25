@@ -7,7 +7,6 @@
   <link rel="icon" type="image/png" href="assets/studio60-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://images.unsplash.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
@@ -15,20 +14,27 @@
   <div id="site-nav"></div>
 
   <main>
-    <!-- PAGE BANNER -->
-    <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=70');">
-      <div class="page-banner-inner">
-        <span class="page-banner-kicker">Your seat at the table</span>
-        <h1 class="page-banner-title">RSVP</h1>
+    <!-- RSVP HERO — bokeh image with all introductory text inside the black space -->
+    <section class="rsvp-hero">
+      <div class="rsvp-hero-content">
+        <span class="rsvp-hero-kicker">An evening with Anisa</span>
+        <h1 class="rsvp-hero-title">A Personal<br /><span class="gold-text">Invitation</span></h1>
+        <p class="rsvp-hero-tagline">Your presence is the greatest gift.</p>
+
+        <div class="rsvp-hero-meta">
+          <span>Fri · July 24 · 2026</span>
+          <span class="dot">◆</span>
+          <span>7:00 PM – 11:00 PM</span>
+          <span class="dot">◆</span>
+          <span class="venue-meta"><span>Westside Arts Center</span><span class="venue-sep"> · </span><span>Atlanta</span></span>
+        </div>
+
+        <p class="rsvp-hero-reply">Kindly reply by <span class="deadline-date">June 15</span>, 2026</p>
       </div>
     </section>
 
     <section class="section section-tight">
       <div class="container">
-        <p class="prose prose-center" style="margin-bottom: 40px;">
-          Kindly reply by <strong style="color: var(--gold-light);">June 15, 2026</strong>. We can't wait to celebrate with you.
-        </p>
-
         <div id="rsvp-success" class="form-success">
           <h3>Thank you — you're on the list.</h3>
           <p>We'll be in touch closer to the date with any final details. See you July 24th.</p>
@@ -69,14 +75,7 @@
             <select id="rsvp-guests" name="guests">
               <option value="1">1</option>
               <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
             </select>
-          </div>
-
-          <div class="form-row">
-            <label for="rsvp-dietary">Dietary preferences or allergies</label>
-            <input id="rsvp-dietary" type="text" name="dietary" placeholder="e.g., vegetarian, gluten-free, nut allergy" />
           </div>
 
           <div class="form-row">

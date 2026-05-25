@@ -1381,3 +1381,109 @@ main { position: relative; z-index: 1; }
 
 /* Section anchor offset (so sticky nav doesn't cover anchored section heading) */
 [id]:not(body) { scroll-margin-top: 92px; }
+
+/* ============================================
+   RSVP Hero — bokeh background, text in right black space
+   ============================================ */
+.rsvp-hero {
+  position: relative;
+  min-height: 78vh;
+  background-image: linear-gradient(90deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0.75) 100%), url('../images/bokeh-gold.jpg');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.rsvp-hero-content {
+  grid-column: 2;
+  padding: 80px 60px;
+  text-align: center;
+  color: var(--text);
+}
+
+.rsvp-hero-kicker {
+  display: block;
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  letter-spacing: 0.36em;
+  font-size: 0.88rem;
+  color: var(--gold-light);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.rsvp-hero-title {
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--white);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+  margin-bottom: 22px;
+}
+
+.rsvp-hero-title .gold-text { display: inline-block; }
+
+.rsvp-hero-tagline {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--ivory);
+  font-style: italic;
+  margin-bottom: 32px;
+  text-wrap: balance;
+}
+
+.rsvp-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 24px;
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  letter-spacing: 0.18em;
+  font-size: 1rem;
+  color: var(--ivory);
+  margin-bottom: 24px;
+}
+.rsvp-hero-meta .dot { color: var(--gold); }
+
+.rsvp-hero-reply {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--text-mute);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.rsvp-hero-reply .deadline-date {
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 1.15em;
+  letter-spacing: 0.16em;
+}
+
+/* Mobile — single column, content centred over the image's middle (which
+   shows the dark area with gold glitter framing top/bottom) */
+@media (max-width: 800px) {
+  .rsvp-hero {
+    grid-template-columns: 1fr;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0.35) 100%), url('../images/bokeh-gold.jpg');
+    background-position: center center;
+    min-height: 90vh;
+  }
+  .rsvp-hero-content {
+    grid-column: 1;
+    padding: 56px 24px;
+  }
+  .rsvp-hero-meta .dot { display: none; }
+  .rsvp-hero-meta .venue-sep { display: none; }
+  .rsvp-hero-meta .venue-meta {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+}
