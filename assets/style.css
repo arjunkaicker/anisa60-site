@@ -543,6 +543,17 @@ main { position: relative; z-index: 1; }
 /* Taller variant to mirror the RSVP hero feel on hero-style pages */
 .page-banner--tall { height: clamp(420px, 60vw, 640px); }
 
+/* Soundtrack page — tight title + tagline lockup on the banner */
+.soundtrack-lockup { line-height: 0.95; }
+.soundtrack-tagline {
+  margin-top: 14px;
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  color: var(--gold-light);
+}
+
 /* Attire page — centred mood block with an italic gold coda */
 .attire-block { text-align: center; }
 .attire-block .section-title { margin-bottom: 24px; }

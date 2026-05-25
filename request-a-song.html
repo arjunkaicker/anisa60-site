@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request a Song · Studio 60</title>
+  <title>Soundtrack · Studio 60</title>
   <link rel="icon" type="image/png" href="assets/studio60-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,18 +16,22 @@
 
   <main>
     <!-- PAGE BANNER -->
-    <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1616714109948-c74fe5029a4d?auto=format&fit=crop&w=2000&q=70');">
+    <section class="page-banner page-banner--tall" style="background-image: url('https://images.unsplash.com/photo-1616714109948-c74fe5029a4d?auto=format&fit=crop&w=2000&q=70');">
       <div class="page-banner-inner">
-        <span class="page-banner-kicker">Build the playlist</span>
-        <h1 class="page-banner-title">Request a <span class="gold-text">Song</span></h1>
+        <h1 class="page-banner-title soundtrack-lockup">
+          Studio 60<br /><span class="gold-text">Soundtrack</span>
+        </h1>
+        <p class="soundtrack-tagline">Songs that shape the journey</p>
       </div>
     </section>
 
     <section class="section section-tight">
       <div class="container">
-        <p class="prose prose-center" style="margin-bottom: 40px;">
-          Help shape the soundtrack for the night. From throwbacks to floor-fillers — drop your picks below.
-        </p>
+        <div class="prose prose-center" style="margin-bottom: 40px;">
+          <p>Music has always been part of the energy behind creativity, connection, memory, and movement.</p>
+          <p>Add a song that makes you dance, remember, celebrate, reflect, or feel alive.</p>
+          <p>Together we'll create the soundtrack for Studio 60.</p>
+        </div>
 
         <div id="song-success" class="form-success">
           <h3>Got it — added to the queue.</h3>
@@ -37,26 +41,26 @@
         <form class="form-card" data-form data-endpoint="https://script.google.com/macros/s/AKfycbz8eIT60QlVLCfSkg14uDk0X7Exgmd-wQ-vmLgtz6C3yXdjjrlkIEhwbaIxdG2hghHlvQ/exec" data-success="song-success">
           <div class="form-row">
             <label for="song-name">Song title</label>
-            <input id="song-name" type="text" name="song" placeholder="e.g., September" required />
+            <input id="song-name" type="text" name="song" required />
           </div>
 
           <div class="form-row">
             <label for="song-artist">Artist</label>
-            <input id="song-artist" type="text" name="artist" placeholder="e.g., Earth, Wind &amp; Fire" required />
+            <input id="song-artist" type="text" name="artist" required />
           </div>
 
           <div class="form-row">
             <label for="song-from">Your name (optional)</label>
-            <input id="song-from" type="text" name="from" placeholder="So Anisa knows who to thank" />
+            <input id="song-from" type="text" name="from" />
           </div>
 
           <div class="form-row">
             <label for="song-message">Note for Anisa (optional)</label>
-            <textarea id="song-message" name="message" placeholder="A memory, a dedication, or just why this song"></textarea>
+            <textarea id="song-message" name="message"></textarea>
           </div>
 
           <div class="center" style="margin-top: 28px;">
-            <button class="btn btn-large" type="submit">Submit Request</button>
+            <button class="btn btn-large" type="submit">Submit</button>
           </div>
         </form>
       </div>

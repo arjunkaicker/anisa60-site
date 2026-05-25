@@ -15,7 +15,7 @@ const NAV_HTML = `
       <li><a class="nav-link" href="run-of-show.html">Run of Show</a></li>
       <li><a class="nav-link" href="venue.html">Venue</a></li>
       <li><a class="nav-link" href="attire.html">Attire</a></li>
-      <li><a class="nav-link" href="request-a-song.html">Request a Song</a></li>
+      <li><a class="nav-link" href="request-a-song.html">Soundtrack</a></li>
       <li><a class="nav-link" href="travel.html">Travel</a></li>
       <li><a class="nav-link" href="advocacy.html">Advocacy</a></li>
     </ul>
