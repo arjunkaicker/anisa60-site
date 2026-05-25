@@ -562,6 +562,47 @@ main { position: relative; z-index: 1; }
   color: var(--gold-light);
 }
 
+/* Run of Show — "The Evening Unfolds" hero + narrative copy */
+.ros-banner {
+  background: var(--black);
+}
+
+.ros-graphic {
+  display: block;
+  width: clamp(220px, 30vw, 320px);
+  height: auto;
+  margin: 0 auto 28px;
+  filter: drop-shadow(0 6px 26px rgba(201, 169, 97, 0.35));
+}
+
+.ros-narrative {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--ivory);
+}
+
+.ros-narrative p {
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.75;
+  margin-bottom: 1.4rem;
+  text-wrap: balance;
+}
+
+.ros-emphasis {
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  letter-spacing: 0.06em;
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem) !important;
+  color: var(--gold-light);
+  margin-top: 1.6rem;
+}
+
+.ros-closing {
+  font-style: italic;
+  color: var(--gold-light);
+  margin-top: 1.6rem;
+}
+
 /* Advocacy — three text-only charity cards */
 .charity-grid {
   display: grid;
