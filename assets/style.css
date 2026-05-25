@@ -433,6 +433,13 @@ main { position: relative; z-index: 1; }
   animation: fadeUp 1s 0.7s ease both;
 }
 
+.hero-rsvp-deadline .deadline-date {
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 1.15em;
+  letter-spacing: 0.16em;
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
@@ -648,7 +655,7 @@ main { position: relative; z-index: 1; }
 .signature {
   width: clamp(200px, 32vw, 260px);
   height: clamp(160px, 26vw, 210px);
-  margin: 18px auto 0;
+  margin: 6px auto 0;
   background: var(--gold-gradient);
   -webkit-mask: url('../images/anisa-signature.png') no-repeat center / contain;
   mask: url('../images/anisa-signature.png') no-repeat center / contain;
@@ -1312,13 +1319,12 @@ main { position: relative; z-index: 1; }
    Footer
    ============================================ */
 .footer {
-  border-top: 1px solid var(--line);
-  padding: 56px 28px 40px;
+  padding: 20px 28px 40px;
   text-align: center;
   color: var(--text-mute);
   font-size: 0.85rem;
   letter-spacing: 0.08em;
-  margin-top: 80px;
+  margin-top: 0;
 }
 
 .footer-logo {
