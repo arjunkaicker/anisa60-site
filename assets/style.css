@@ -630,6 +630,8 @@ main { position: relative; z-index: 1; }
   font-style: italic;
 }
 
+.message-quote + .message-quote { margin-top: 14px; }
+
 .message-sign {
   margin-top: 24px;
   font-family: 'Bebas Neue', 'Oswald', sans-serif;
