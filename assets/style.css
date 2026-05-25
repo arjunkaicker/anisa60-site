@@ -1383,24 +1383,29 @@ main { position: relative; z-index: 1; }
 [id]:not(body) { scroll-margin-top: 92px; }
 
 /* ============================================
-   RSVP Hero — bokeh background, text in right black space
+   RSVP Hero — vertical bokeh column on the left,
+   intro text + form all on the right
    ============================================ */
 .rsvp-hero {
   position: relative;
-  min-height: 78vh;
-  background-image: linear-gradient(90deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0.75) 100%), url('../images/bokeh-gold.jpg');
-  background-size: cover;
-  background-position: left center;
-  background-repeat: no-repeat;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+  grid-template-columns: minmax(220px, 28%) 1fr;
+  align-items: stretch;
+  background: var(--black);
   border-bottom: 1px solid var(--line);
 }
 
+.rsvp-hero-image {
+  background-image: url('../images/bokeh-gold.jpg');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  border-right: 1px solid var(--line);
+  min-height: 100%;
+}
+
 .rsvp-hero-content {
-  grid-column: 2;
-  padding: 80px 60px;
+  padding: 72px 56px;
   text-align: center;
   color: var(--text);
 }
@@ -1465,19 +1470,20 @@ main { position: relative; z-index: 1; }
   letter-spacing: 0.16em;
 }
 
-/* Mobile — single column, content centred over the image's middle (which
-   shows the dark area with gold glitter framing top/bottom) */
+/* Add breathing room before the form within the hero content column */
+.rsvp-hero-content .form-success,
+.rsvp-hero-content .form-card { margin-top: 40px; }
+
+/* Mobile — stack: image as a top banner, then content + form below */
 @media (max-width: 800px) {
-  .rsvp-hero {
-    grid-template-columns: 1fr;
-    background-image: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0.35) 100%), url('../images/bokeh-gold.jpg');
-    background-position: center center;
-    min-height: 90vh;
+  .rsvp-hero { grid-template-columns: 1fr; }
+  .rsvp-hero-image {
+    min-height: 180px;
+    background-position: center top;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
   }
-  .rsvp-hero-content {
-    grid-column: 1;
-    padding: 56px 24px;
-  }
+  .rsvp-hero-content { padding: 40px 20px; }
   .rsvp-hero-meta .dot { display: none; }
   .rsvp-hero-meta .venue-sep { display: none; }
   .rsvp-hero-meta .venue-meta {
