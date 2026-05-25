@@ -381,6 +381,17 @@ main { position: relative; z-index: 1; }
   display: inline-block;
 }
 
+.hero-intro {
+  max-width: 720px;
+  margin: 28px auto 0;
+  padding: 0 16px;
+  color: var(--ivory);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.65;
+  text-align: center;
+  animation: fadeUp 1s 0.35s ease both;
+}
+
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
