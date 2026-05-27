@@ -594,6 +594,9 @@ main { position: relative; z-index: 1; }
   font-size: 1.15em;
   letter-spacing: 0.16em;
 }
+
+/* Keeps a date and its year locked together on one line */
+.deadline-line { white-space: nowrap; }
 .soundtrack-tagline {
   margin-top: 14px;
   font-family: 'Bebas Neue', 'Oswald', sans-serif;
