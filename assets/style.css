@@ -569,6 +569,23 @@ main { position: relative; z-index: 1; }
 
 /* Soundtrack page — tight title + tagline lockup on the banner */
 .soundtrack-lockup { line-height: 0.95; }
+
+/* Soundtrack deadline note — matches the RSVP "Kindly reply by" treatment */
+.song-deadline {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-mute);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 32px;
+}
+
+.song-deadline .deadline-date {
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 1.15em;
+  letter-spacing: 0.16em;
+}
 .soundtrack-tagline {
   margin-top: 14px;
   font-family: 'Bebas Neue', 'Oswald', sans-serif;
