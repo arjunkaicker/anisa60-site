@@ -233,6 +233,17 @@ p { margin-bottom: 1rem; }
   font-size: 1.15rem;
 }
 
+/* Slightly more presence on the primary submit button so the eye lands on it */
+.btn-confirm {
+  padding: 24px 64px;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+
+/* Narrow select for short option lists (e.g. guests = 1 or 2) */
+.form-row select.select-narrow { width: auto; min-width: 120px; max-width: 160px; }
+
 .btn-arrow::after {
   content: " ↗";
   margin-left: 4px;
@@ -1346,7 +1357,7 @@ main { position: relative; z-index: 1; }
   box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.15);
 }
 
-.form-row textarea { min-height: 100px; resize: vertical; }
+.form-row textarea { min-height: 78px; resize: vertical; }
 
 .form-row .help {
   font-size: 0.8rem;
@@ -1382,9 +1393,12 @@ main { position: relative; z-index: 1; }
 }
 
 .radio-pill input:checked + label {
-  background: var(--gold-gradient-flat);
-  color: var(--black);
-  border-color: transparent;
+  background: transparent;
+  color: var(--gold-light);
+  border: 2px solid var(--gold);
+  padding: 13px 23px; /* compensate for thicker border so size stays consistent */
+  font-weight: 600;
+  box-shadow: 0 0 0 1px rgba(201, 169, 97, 0.25) inset;
 }
 
 .form-success {
