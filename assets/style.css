@@ -652,6 +652,89 @@ main { position: relative; z-index: 1; }
   margin-top: 1.6rem;
 }
 
+/* Run of Show — "The Lineup" performer cards */
+.lineup-heading {
+  text-align: center;
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+  letter-spacing: 0.06em;
+  color: var(--gold-light);
+  margin-bottom: 36px;
+}
+
+.lineup-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.lineup-card {
+  padding: 32px 28px;
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0.95), rgba(0, 0, 0, 0.9));
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.lineup-card--with-image { padding-top: 0; }
+
+.lineup-image {
+  margin: 0 -28px 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--black);
+}
+
+.lineup-image img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lineup-role {
+  display: block;
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  letter-spacing: 0.32em;
+  font-size: 0.8rem;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.lineup-name {
+  color: var(--gold-light);
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+
+.lineup-tag {
+  font-size: 0.55em;
+  color: var(--text-mute);
+  letter-spacing: 0.22em;
+  margin-left: 6px;
+  vertical-align: middle;
+  font-weight: 400;
+}
+
+.lineup-bio {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .lineup-grid { grid-template-columns: 1fr; gap: 18px; }
+  .lineup-card { padding: 26px 22px; }
+  .lineup-image img { height: 200px; }
+}
+
 /* Advocacy — three text-only charity cards */
 .charity-grid {
   display: grid;
