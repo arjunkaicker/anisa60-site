@@ -872,6 +872,42 @@ main { position: relative; z-index: 1; }
   .charity-card { padding: 28px 24px; }
 }
 
+/* Terms & Conditions page — clean reading layout */
+.terms-block {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--text);
+}
+
+.terms-intro {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ivory);
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+  text-wrap: balance;
+}
+
+.terms-block h2 {
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.terms-block h2:first-of-type { margin-top: 0; }
+
+.terms-block p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
 /* Attire page — centred mood block with an italic gold coda */
 .attire-block { text-align: center; }
 .attire-block .section-title { margin-bottom: 24px; }
