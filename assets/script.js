@@ -130,10 +130,52 @@ function initForms() {
   });
 }
 
+// Soundtrack page — fetch and render the list of song requests
+function initSongList() {
+  const wrap = document.querySelector('[data-songs]');
+  if (!wrap) return;
+  const endpoint = wrap.dataset.songsEndpoint;
+  const list = wrap.querySelector('[data-songs-list]');
+  const status = wrap.querySelector('[data-songs-status]');
+  if (!endpoint || !list || !status) return;
+
+  function escape(str) {
+    const div = document.createElement('div');
+    div.textContent = String(str == null ? '' : str);
+    return div.innerHTML;
+  }
+
+  fetch(endpoint, { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
+    .then(data => {
+      const songs = (data && Array.isArray(data.songs)) ? data.songs : [];
+      if (!songs.length) {
+        status.textContent = 'No requests yet — be the first.';
+        return;
+      }
+      status.textContent = songs.length + ' song' + (songs.length === 1 ? '' : 's') + ' so far';
+      list.innerHTML = songs.map(s => {
+        const song = escape(s.song);
+        const artist = escape(s.artist);
+        return '<li class="songs-list-row">' +
+                 '<span class="songs-list-title">' + song + '</span>' +
+                 (artist ? '<span class="songs-list-artist">' + artist + '</span>' : '') +
+               '</li>';
+      }).join('');
+      list.classList.add('is-loaded');
+    })
+    .catch(() => {
+      // Endpoint not yet returning JSON (e.g. doGet hasn't been added/redeployed).
+      // Hide the section quietly so the page still looks intentional.
+      wrap.style.display = 'none';
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavToggle();
   initActiveNav();
   initCountdown();
   initTimelineTabs();
   initForms();
+  initSongList();
 });
