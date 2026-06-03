@@ -109,7 +109,7 @@ function initForms() {
             submitBtn.disabled = false;
             submitBtn.textContent = originalLabel;
           }
-          alert("Sorry — couldn't send your RSVP. Check your connection and try again, or email info@anisa60.com.");
+          alert("Sorry — couldn't send your RSVP. Check your connection and try again, or email info@anisa.com.");
           return;
         }
       }
