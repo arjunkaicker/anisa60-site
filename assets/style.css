@@ -755,7 +755,8 @@ main { position: relative; z-index: 1; }
 .lineup-image img {
   display: block;
   width: 100%;
-  height: 220px;
+  aspect-ratio: 1 / 1;
+  height: auto;
   object-fit: cover;
   object-position: center;
 }
@@ -795,7 +796,6 @@ main { position: relative; z-index: 1; }
 @media (max-width: 800px) {
   .lineup-grid { grid-template-columns: 1fr; gap: 18px; }
   .lineup-card { padding: 26px 22px; }
-  .lineup-image img { height: 200px; }
 }
 
 /* Advocacy — three text-only charity cards */
