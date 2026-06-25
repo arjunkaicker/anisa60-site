@@ -715,6 +715,38 @@ main { position: relative; z-index: 1; }
   margin-top: 1.6rem;
 }
 
+/* Run of Show — "A Living Tribute" feature section */
+.tribute-heading {
+  text-align: center;
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+  letter-spacing: 0.06em;
+  color: var(--gold-light);
+  margin-bottom: 28px;
+}
+
+.tribute-block {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tribute-block p {
+  color: var(--ivory);
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  text-wrap: balance;
+}
+
+.tribute-block p:last-child { margin-bottom: 0; }
+
+.tribute-closing {
+  font-style: italic;
+  color: var(--gold-light) !important;
+  margin-top: 14px !important;
+}
+
 /* Run of Show — "The Lineup" performer cards */
 .lineup-heading {
   text-align: center;
