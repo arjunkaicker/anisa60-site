@@ -846,6 +846,9 @@ main { position: relative; z-index: 1; }
 @media (max-width: 800px) {
   .lineup-grid { grid-template-columns: 1fr; gap: 18px; }
   .lineup-card { padding: 26px 22px; }
+  /* Match the figure's negative side margins to the card's mobile padding
+     so the image area aligns with the card edges (and logos don't clip). */
+  .lineup-image { margin-left: -22px; margin-right: -22px; }
 }
 
 /* Advocacy — three text-only charity cards */
