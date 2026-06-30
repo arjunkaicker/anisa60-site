@@ -765,6 +765,18 @@ main { position: relative; z-index: 1; }
   margin: 0 auto;
 }
 
+/* When the lineup has an odd number of cards (e.g. 5), the last one
+   would sit left-aligned in a half-empty row. Centre it instead so the
+   grid reads as a clean tower with a single highlighted card at the foot. */
+@media (min-width: 801px) {
+  .lineup-grid > .lineup-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: calc((100% - 24px) / 2);
+    width: 100%;
+  }
+}
+
 .lineup-card {
   padding: 32px 28px;
   background: linear-gradient(180deg, rgba(20, 20, 20, 0.95), rgba(0, 0, 0, 0.9));
