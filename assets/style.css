@@ -919,6 +919,44 @@ main { position: relative; z-index: 1; }
   .charity-card { padding: 28px 24px; }
 }
 
+/* Homepage — Hashtag callout between hero and Anisa's note */
+.hashtag-callout {
+  text-align: center;
+  padding: 28px 28px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hashtag-callout-label {
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  letter-spacing: 0.32em;
+  font-size: 0.8rem;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.hashtag-callout-tag {
+  display: inline-block;
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  letter-spacing: 0.04em;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.hashtag-callout-tag:hover,
+.hashtag-callout-tag:focus-visible {
+  transform: scale(1.03);
+}
+
 /* Homepage — Explore The Evening (page navigation tiles) */
 .explore-heading {
   text-align: center;
@@ -935,6 +973,18 @@ main { position: relative; z-index: 1; }
   gap: 20px;
   max-width: 1080px;
   margin: 0 auto;
+}
+
+/* When the tile count leaves the last row with a single orphan on the
+   3-column desktop grid (e.g. 7 tiles), centre it so it doesn't sit
+   left-aligned in a half-empty row. */
+@media (min-width: 900px) {
+  .explore-grid > .explore-tile:last-child:nth-child(3n+1) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: calc((100% - 40px) / 3);
+    width: 100%;
+  }
 }
 
 .explore-tile {
