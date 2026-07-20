@@ -793,15 +793,20 @@ main { position: relative; z-index: 1; }
 .lineup-image {
   margin: 0 -28px 24px;
   background: var(--black);
+  position: relative;
+  padding-bottom: 100%;
+  height: 0;
+  overflow: hidden;
 }
 
 .lineup-image img {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   object-position: center;
+  display: block;
 }
 
 .lineup-role {
